@@ -2,7 +2,9 @@ void main() {
   //Example 1: Print Each Item Of List Using Foreach
   List<String> footballplayers = ['Ronaldo', 'Messi', 'Neymar', 'Hazard'];
   footballplayers.forEach((names) => print(names));
-
+  footballplayers
+      .asMap()
+      .forEach((index, value) => print("$value index is $index"));
   //Print Each Total and Average Of Lists
   List<int> numbers = [1, 2, 3, 4, 5];
 
