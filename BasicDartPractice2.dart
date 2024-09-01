@@ -77,5 +77,39 @@ void main(List<String> args) {
   //Write a dart program to create a
   //simple calculator
   //that performs addition, subtraction, multiplication, and division.
-  print("Enter one of this sign (+,-,*,/)");
+  print("Enter one of these signs (+, -, *, /):");
+  String? sign = stdin.readLineSync();
+
+  print("Enter the first number:");
+  int? firstNum = int.parse(stdin.readLineSync()!);
+
+  print("Enter the second number:");
+  int? secNum = int.parse(stdin.readLineSync()!);
+
+  if (sign == '+') {
+    int add = firstNum + secNum;
+    print("$firstNum + $secNum = $add");
+  } else if (sign == '-') {
+    int sub = firstNum - secNum;
+    print("$firstNum - $secNum = $sub");
+  } else if (sign == '*') {
+    int mult = firstNum * secNum;
+    print("$firstNum * $secNum = $mult");
+  } else if (sign == '/') {
+    if (secNum == 0) {
+      print("Division by zero is not allowed.");
+    } else {
+      double div = firstNum / secNum;
+      print("$firstNum / $secNum = $div");
+    }
+  } else {
+    print("Invalid operation sign.");
+  }
+  //Write a dart program to print 1 to 100 but not 41.
+  for (int i = 1; i <= 100; i++) {
+    if (i == 41) {
+      continue;
+    }
+    print(i);
+  }
 }
