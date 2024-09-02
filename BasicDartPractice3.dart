@@ -24,4 +24,8 @@ void main(List<String> args) {
   print("Enter the second");
   int? num2 = int.parse(stdin.readLineSync()!);
   printEvenNumbers(num1, num2);
+
+  //Create a function called greet that takes a name as an
+  //argument and prints a greeting message. For example,
+  // greet(“John”) should print “Hello, John”.
 }
