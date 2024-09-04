@@ -1,5 +1,6 @@
 //https://dart-tutorial.com/dart-functions/questions-for-practice-3/
 //This is a answer for the questions in this page
+
 import 'dart:io';
 
 void printName() {
@@ -13,19 +14,30 @@ void printEvenNumbers(int start, int end) {
     }
   }
 }
+void greet(String? name) {
+  if (name != null && name.isNotEmpty) {
+    print("Hello, $name!");
+  } else {
+    print("Hello, Stranger!");
+  }
+}
 
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
 
   //Write a program in Dart to print even numbers between intervals using function.
-  print("Enter the start");
+  print("Enter the start:");
   int? num1 = int.parse(stdin.readLineSync()!);
-  print("Enter the second");
+  print("Enter the End:");
   int? num2 = int.parse(stdin.readLineSync()!);
   printEvenNumbers(num1, num2);
 
   //Create a function called greet that takes a name as an
   //argument and prints a greeting message. For example,
   // greet(“John”) should print “Hello, John”.
+   print("Enter Your name:");
+  String? name = stdin.readLineSync();
+  greet(name);
+
 }
