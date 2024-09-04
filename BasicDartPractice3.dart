@@ -2,6 +2,7 @@
 //This is a answer for the questions in this page
 
 import 'dart:io';
+import 'dart:math';
 
 void printName() {
   print("Your name");
@@ -21,7 +22,17 @@ void greet(String? name) {
     print("Hello, Stranger!");
   }
 }
-
+void generatePassword() {
+    final random = Random();
+    final characters =
+        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+';
+    String password = '';
+    for (int i = 0; i < 12; i++) {
+      password += characters[
+          random.nextInt(characters.length)]; 
+    }
+   print(password);
+  }
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -39,5 +50,8 @@ void main(List<String> args) {
    print("Enter Your name:");
   String? name = stdin.readLineSync();
   greet(name);
+  //Write a program in Dart that generates random password.
+  generatePassword();
+
 
 }
