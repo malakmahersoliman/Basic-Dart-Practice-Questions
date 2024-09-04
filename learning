@@ -14,3 +14,64 @@ assert(age!=22, "Age must be 22");
 }
 How to Run File In Assert Mode
 dart --enable-asserts file_name.dart
+
+different between final and const
+
+In Dart, both `final` and `const` are used to declare variables whose values cannot be changed once assigned. However, there are key differences between the two:
+
+### `final` Keyword
+
+- **Single Assignment**: A `final` variable can only be assigned once. After the initial assignment, the value cannot be changed.
+- **Runtime Constant**: The value of a `final` variable is determined at runtime. This means you can use `final` for variables where the value might not be known until the program is running.
+- **Instance-Level**: `final` can be used for instance variables, meaning each instance of a class can have its own value for the `final` variable.
+
+Example:
+
+```dart
+void main() {
+  final DateTime now = DateTime.now();
+  print(now);
+}
+```
+
+Here, `now` is assigned at runtime when the `DateTime.now()` is called.
+
+### `const` Keyword
+
+- **Compile-Time Constant**: A `const` variable is a compile-time constant, meaning its value must be known at compile time. The value is fixed and cannot change during the execution of the program.
+- **Immutable**: The `const` keyword ensures that the variable is deeply immutable. If the `const` variable is a list or an object, all its elements or properties are also immutable.
+- **Class-Level**: `const` can only be used for static (class-level) variables or for creating compile-time constants within a method.
+
+Example:
+
+```dart
+void main() {
+  const int daysInWeek = 7;
+  const pi = 3.14159;
+  print(daysInWeek);
+  print(pi);
+}
+```
+
+### Key Differences:
+
+- **Assignment Time**: `final` variables are assigned at runtime, while `const` variables are assigned at compile time.
+- **Mutability**: A `const` variable is deeply immutable, whereas a `final` variable can reference objects that are mutable (though the reference itself can't change).
+- **Usage Context**: `final` can be used for instance variables, while `const` is typically used for static or top-level variables that need to be compile-time constants.
+
+### Example Comparison:
+
+```dart
+class Example {
+  final DateTime createdAt = DateTime.now(); // Runtime constant
+  static const int maxUsers = 100; // Compile-time constant
+}
+
+void main() {
+  final example = Example();
+  print(example.createdAt); // Different each time you run
+  print(Example.maxUsers);  // Always 100
+}
+```
+
+In this example, `createdAt` is a `final` variable that gets its value at runtime, while `maxUsers` is a `const` variable with a value known at compile time.

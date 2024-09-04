@@ -33,6 +33,11 @@ void generatePassword() {
     }
    print(password);
   }
+void areaOfacircle(int r){
+  const pi = 3.14;
+  double area = pi*r*r;
+  print("The area of cricle = $area");
+}
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -52,6 +57,11 @@ void main(List<String> args) {
   greet(name);
   //Write a program in Dart that generates random password.
   generatePassword();
+  //Write a program in Dart that find the area of a circle using function. 
+  //Formula: pi * r * r
+  print("Enter the radius");
+  int? radius  = int.parse(stdin.readLineSync()!);
+  areaOfacircle(radius);
 
 
 }
