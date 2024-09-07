@@ -15,6 +15,7 @@ void printEvenNumbers(int start, int end) {
     }
   }
 }
+
 void greet(String? name) {
   if (name != null && name.isNotEmpty) {
     print("Hello, $name!");
@@ -22,22 +23,25 @@ void greet(String? name) {
     print("Hello, Stranger!");
   }
 }
+
 void generatePassword() {
-    final random = Random();
-    final characters =
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+';
-    String password = '';
-    for (int i = 0; i < 12; i++) {
-      password += characters[
-          random.nextInt(characters.length)]; 
-    }
-   print(password);
+  final random = Random();
+  final characters =
+      'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#\$%^&*()_+';
+  String password = '';
+  for (int i = 0; i < 12; i++) {
+    password += characters[random.nextInt(characters.length)];
   }
-void areaOfacircle(int r){
+  print(password);
+}
+
+void areaOfacircle(int r) {
   const pi = 3.14;
-  double area = pi*r*r;
+  double area = pi * r * r;
   print("The area of cricle = $area");
 }
+
+void reverseStr(String? str) {}
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -52,16 +56,18 @@ void main(List<String> args) {
   //Create a function called greet that takes a name as an
   //argument and prints a greeting message. For example,
   // greet(“John”) should print “Hello, John”.
-   print("Enter Your name:");
+  print("Enter Your name:");
   String? name = stdin.readLineSync();
   greet(name);
   //Write a program in Dart that generates random password.
   generatePassword();
-  //Write a program in Dart that find the area of a circle using function. 
+  //Write a program in Dart that find the area of a circle using function.
   //Formula: pi * r * r
   print("Enter the radius");
-  int? radius  = int.parse(stdin.readLineSync()!);
+  int? radius = int.parse(stdin.readLineSync()!);
   areaOfacircle(radius);
-
-
+  //Write a program in Dart to reverse a String using function.
+  print("Enter string:");
+  String? sent = stdin.readLineSync();
+  reverseStr(sent);
 }
