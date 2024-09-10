@@ -41,7 +41,9 @@ void areaOfacircle(int r) {
   print("The area of cricle = $area");
 }
 
-void reverseStr(String? str) {}
+void reverseStr(String? str) {
+  
+}
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -70,4 +72,5 @@ void main(List<String> args) {
   print("Enter string:");
   String? sent = stdin.readLineSync();
   reverseStr(sent);
+
 }
