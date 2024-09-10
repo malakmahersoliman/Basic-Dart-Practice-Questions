@@ -42,8 +42,11 @@ void areaOfacircle(int r) {
 }
 
 void reverseStr(String? str) {
-  
+  String? reversedstr =
+      str?.split('').reversed.join('') ?? 'The String is empty';
+  print(reversedstr);
 }
+
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -72,5 +75,6 @@ void main(List<String> args) {
   print("Enter string:");
   String? sent = stdin.readLineSync();
   reverseStr(sent);
-
+  //Write a program in Dart to calculate power of a certain number. For e.g 5^3=125
+  print("Enter the number")
 }
