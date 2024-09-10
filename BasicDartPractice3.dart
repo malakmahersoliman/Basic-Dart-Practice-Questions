@@ -47,6 +47,18 @@ void reverseStr(String? str) {
   print(reversedstr);
 }
 
+double? powerOfnumber(double? num, double? pow) {
+  if (pow == 0) {
+    return 1;
+  }
+  return num! * powerOfnumber(num, pow! - 1)!;
+}
+
+int? add(int? a, int? b) {
+  int? sum = a! + b!;
+  return sum;
+}
+
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -76,5 +88,17 @@ void main(List<String> args) {
   String? sent = stdin.readLineSync();
   reverseStr(sent);
   //Write a program in Dart to calculate power of a certain number. For e.g 5^3=125
-  print("Enter the number")
+  print("Enter the number");
+  double? number = double.parse(stdin.readLineSync()!);
+  print("Enter the power ");
+  double? power = double.parse(stdin.readLineSync()!);
+  print(powerOfnumber(number, power));
+  //Write a function in Dart named add that takes two numbers as arguments and returns their sum.
+  print("Enter the first number:");
+  int? firstNum = int.parse(stdin.readLineSync()!);
+  print("Enter the Second number:");
+  int? SecondNum = int.parse(stdin.readLineSync()!);
+  print(add(firstNum,SecondNum));
+  //Write a function in Dart called maxNumber that takes three numbers as arguments and returns the largest number.
+  
 }
