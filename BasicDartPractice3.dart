@@ -59,6 +59,18 @@ int? add(int? a, int? b) {
   return sum;
 }
 
+int? MaxNumber(int? nF, int? nS, int? nT) {
+  if (nF != null && nS != null && nT != null) {
+    if (nF > nS && nF > nT) {
+      return nF;
+    } else if (nS > nF && nS > nT) {
+      return nS;
+    } else if (nT > nF && nT > nS) {
+      return nT;
+    }
+  }
+}
+
 void main(List<String> args) {
   //Write a program in Dart to print your own name using function
   printName();
@@ -98,7 +110,20 @@ void main(List<String> args) {
   int? firstNum = int.parse(stdin.readLineSync()!);
   print("Enter the Second number:");
   int? SecondNum = int.parse(stdin.readLineSync()!);
-  print(add(firstNum,SecondNum));
+  print("The sum :");
+  print(add(firstNum, SecondNum));
   //Write a function in Dart called maxNumber that takes three numbers as arguments and returns the largest number.
-  
+  print("Enter the first number:");
+  int? nF = int.parse(stdin.readLineSync()!);
+  print("Enter the Second number:");
+  int? nS = int.parse(stdin.readLineSync()!);
+  print("Enter the Third number:");
+  int? nT = int.parse(stdin.readLineSync()!);
+  int? maxNum = MaxNumber(nF, nS, nT);
+  if (maxNum != null) {
+    print("The largest number = $maxNum");
+  } else {
+    print("One or more values are null");
+  }
+  //Write a function in Dart called isEven that takes a number as an argument and returns True if the number is even, and False otherwise.
 }
