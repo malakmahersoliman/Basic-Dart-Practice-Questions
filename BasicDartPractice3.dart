@@ -69,6 +69,7 @@ int? MaxNumber(int? nF, int? nS, int? nT) {
       return nT;
     }
   }
+  return null;
 }
 
 void main(List<String> args) {
